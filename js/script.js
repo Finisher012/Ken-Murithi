@@ -5,15 +5,30 @@
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
-menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+if (menuBtn && navLinks) {
 
-    if (navLinks.classList.contains("active")) {
-        menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    } else {
-        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    }
-});
+    menuBtn.addEventListener("click", () => {
+
+        navLinks.classList.toggle("active");
+
+        if (navLinks.classList.contains("active")) {
+            menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        } else {
+            menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+
+    });
+
+}
+
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        // your code here
+    });
+}
 
 // ===============================
 // STICKY NAVBAR
@@ -169,31 +184,28 @@ window.addEventListener("load", () => {
 
 const backToTop = document.getElementById("backToTop");
 
-window.addEventListener("scroll", () => {
+if (backToTop) {
 
-    if(window.scrollY > 400){
-        backToTop.classList.add("show");
-    }else{
-        backToTop.classList.remove("show");
-    }
+    backToTop.addEventListener("click", () => {
 
-});
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
-backToTop.addEventListener("click", () => {
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
     });
 
-    
+}
 
-});
+
+
 // ===============================
 // TYPING EFFECT
 // ===============================
 
-const typingText = document.getElementById("typing-text");
+if (typingText) {
+    typeEffect();
+}
 
 const words = [
     "Software Developer",
@@ -254,7 +266,13 @@ typeEffect();
 // THEME TOGGLE
 // ===============================
 
-const themeToggle = document.getElementById("theme-toggle");
+if (themeToggle) {
+
+    const icon = themeToggle.querySelector("i");
+
+    // theme code here
+
+}
 
 const body = document.body;
 
