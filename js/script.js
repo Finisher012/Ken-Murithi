@@ -186,6 +186,8 @@ backToTop.addEventListener("click", () => {
         behavior:"smooth"
     });
 
+    
+
 });
 // ===============================
 // TYPING EFFECT
