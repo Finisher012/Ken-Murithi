@@ -6,6 +6,14 @@
 /* ===============================
    RESET
 ==================================*/
+:root{
+    --bg:#070B14;
+    --card:#111827;
+    --primary:#4F46E5;
+    --secondary:#06B6D4;
+    --text:#FFFFFF;
+}
+
 *{
     margin:0;
     padding:0;
@@ -20,7 +28,27 @@ body{
     color:#fff;
     overflow-x:hidden;
 }
+body::before{
 
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    background:#4F46E5;
+
+    filter:blur(180px);
+
+    opacity:.2;
+
+    top:-150px;
+    right:-150px;
+
+    z-index:-1;
+
+}
 a{
     text-decoration:none;
     color:inherit;
@@ -60,6 +88,12 @@ header{
     padding:20px 0;
 }
 
+.navbar{
+    backdrop-filter: blur(20px);
+    background: rgba(15,23,42,.65);
+    border:1px solid rgba(255,255,255,.08);
+}
+
 .logo a{
     font-size:2rem;
     font-weight:700;
@@ -94,7 +128,17 @@ header{
 /* ===============================
    HERO SECTION
 ==================================*/
+.btn{
 
+    background:linear-gradient(
+        90deg,
+        #4F46E5,
+        #06B6D4
+    );
+
+    box-shadow:0 0 30px rgba(79,70,229,.35);
+
+}
 .hero{
 
 
@@ -445,7 +489,13 @@ width:280px;
     margin-top:50px;
 
 }
+.project-card:hover{
 
+    transform:
+        translateY(-15px)
+        scale(1.03);
+
+}
 .stat-card{
 
     background:#111827;
